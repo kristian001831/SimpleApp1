@@ -10,15 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var clickCounter: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBOutlet weak var TextLabel: UILabel!
     
     @IBAction func Clicked(_ sender: Any) {
-        TextLabel.text = "Welcome in my first app :D"
+        if(clickCounter == 0){
+            TextLabel.text = "Welcome in my first app :D"
+            clickCounter = clickCounter + 1
+        }
+        else if(clickCounter > 0){
+            TextLabel.text = "You clicked now this button the 2nd time, it is just a useless button! :D"
+            clickCounter = clickCounter + 1
+        }
     }
 }
 
